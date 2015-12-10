@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class PageAnnonceDetaillerGUI extends JFrame {
+public class PageAnnonceDetaillerGUI extends JFrame implements ActionListener {
 	
 	private JPanel container = new JPanel();
 	
@@ -12,7 +12,8 @@ public class PageAnnonceDetaillerGUI extends JFrame {
 	protected JTextField tPhoto = new JTextField(15);
 	protected JTextArea textService = new JTextArea();
 	protected JTextArea textDescription = new JTextArea();
-	private JButton bContacter = new JButton("Contacter");
+	
+	private JButton bouton_contacter = new JButton("Contacter");
 	
 	
 	// Constructor
@@ -27,7 +28,6 @@ public class PageAnnonceDetaillerGUI extends JFrame {
 		this.setAlwaysOnTop(true);
 		this.AjoutElements(); //ajouter les elements qui sont dans la fonction
 		this.setContentPane(container);
-		
 		this.setVisible(true);
 	}
 	
@@ -51,17 +51,20 @@ public class PageAnnonceDetaillerGUI extends JFrame {
 		textService.setText("Prix ou Service");
 		container.add(textService);
 
-		bContacter.addActionListener(new bContacterListener());
-		container.add(bContacter);
+		bouton_contacter.addActionListener(this);
+		bouton_contacter.setActionCommand("Contacter");
+		container.add(bouton_contacter);
+	
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent event) {
+		if(event.getActionCommand().equals("Contacter")) {
+			
+		}
+	
 	}
 	
-	//Classes ecoutant les Boutons	  
-	public class bContacterListener implements ActionListener { 		// b1 bouton contacter
-		public void actionPerformed(ActionEvent e1) {
-			if((JButton)e1.getSource()==bContacter) {
-			
-			}
-		}
-	}
 	
 }

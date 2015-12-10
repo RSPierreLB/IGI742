@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class PageInscriptionGUI extends JFrame {
+public class PageInscriptionGUI extends JFrame implements ActionListener {
 	
 	private JPanel container = new JPanel();
 	
@@ -18,8 +18,8 @@ public class PageInscriptionGUI extends JFrame {
 	protected JTextField tPseudo = new JTextField(15);
 	protected JTextField tPhoto = new JTextField(15);
 	
-	private JButton b1 = new JButton("Annuler");
-	private JButton b2 = new JButton("Inscription");
+	private JButton bouton_annuler = new JButton("Annuler");
+	private JButton bouton_inscription = new JButton("Inscription");
 
 	
 	// Constructor
@@ -61,26 +61,28 @@ public class PageInscriptionGUI extends JFrame {
 		container.add(lPhoto);
 		container.add(tPhoto);
 		
-		b1.addActionListener(new b1Listener());     
-	    b2.addActionListener(new b2Listener());
-		container.add(b1);
-		container.add(b2);
+		bouton_annuler.addActionListener(this);
+		bouton_annuler.setActionCommand("Annuler");
+		container.add(bouton_annuler);
+		
+	    bouton_inscription.addActionListener(this);
+	    bouton_inscription.setActionCommand("Inscription");
+		container.add(bouton_inscription);
 	}
-	
-	//Classes ecoutant les Boutons	  
-	public class b1Listener implements ActionListener { 		// b1 bouton annuler
-		public void actionPerformed(ActionEvent e1) {
-			if((JButton)e1.getSource()==b1) {
-				setVisible(false);
-			}
+
+
+	@Override
+	public void actionPerformed(ActionEvent event) {
+		// TODO Auto-generated method stub
+		if(event.getActionCommand().equals("Annuler")) {
+			//PageConnexionGUI pc = new PageConnexionGUI(); 
+			
+		}
+		
+		if(event.getActionCommand().equals("Inscription")) {
+
 		}
 	}
-	  
-	public class b2Listener implements ActionListener {			// b2 bouton connexion
-		public void actionPerformed(ActionEvent e2) {
-			if((JButton)e2.getSource()==b2) {
-				
-			}
-		}  
-	}	
+	
+
 }

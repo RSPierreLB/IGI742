@@ -85,12 +85,12 @@ public class PageMonCompteGUI extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
-		if(event.getActionCommand().equals("Annuler")){
+		if(event.getActionCommand().equals("Annuler")) {
 			//PageConnexionGUI pc = new PageConnexionGUI(); 
 			
 		}
 		
-		if(event.getActionCommand().equals("Modifier")){
+		if(event.getActionCommand().equals("Modifier")) {
  
 		}
 	}

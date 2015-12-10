@@ -86,12 +86,12 @@ public class PageNonConnecterGUI extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
-		if(event.getActionCommand().equals("Connexion")){
+		if(event.getActionCommand().equals("Connexion")) {
 			PageConnexionGUI pc = new PageConnexionGUI(); 
 			
 		}
 		
-		if(event.getActionCommand().equals("Rechercher")){
+		if(event.getActionCommand().equals("Rechercher")) {
 			recherche = tRecherche.getText();					//récupérer les valeurs du champ 
 		}
 	}
