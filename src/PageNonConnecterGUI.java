@@ -26,7 +26,7 @@ public class PageNonConnecterGUI extends JFrame implements ActionListener {
 	
 	public PageNonConnecterGUI() {
 		
-		this.setSize(540, 500); 												//size de la fenetre
+		this.setSize(400, 500); 												//size de la fenetre
 		this.setTitle("Application de partage sur le campus"); 					//titre de la fenetre
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -47,18 +47,16 @@ public class PageNonConnecterGUI extends JFrame implements ActionListener {
 		bouton_connexion.setPreferredSize(new Dimension(100, 40)); 							//dimension du bouton2    
 		bouton_connexion.addActionListener(this);
 		bouton_connexion.setActionCommand("Connexion");
-		
 
 		panBouton.setLayout(new GridLayout(1, 2));
 		panBouton.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panBouton.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		panBouton.setPreferredSize(new Dimension(520,50)); 						//size du panneau
+		panBouton.setPreferredSize(new Dimension(380,50)); 						//size du panneau
 		panBouton.setBackground(Color.RED); 									//couleur fond panneau bouton
 		panBouton.add(bouton_recherche);
-		panBouton.add(tRecherche); //Champ de recherche
+		panBouton.add(tRecherche); 												//Champ de recherche
 		panBouton.add(bouton_connexion);
 	    
-		
 		
 		// Affichage des annonces
 	    listeAnnonces.setBackground(Color.WHITE);								//couleur du fond de la liste
@@ -68,32 +66,17 @@ public class PageNonConnecterGUI extends JFrame implements ActionListener {
 	    listeAnnonces.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		
 	    panListeAnnonces.setBorder(new LineBorder(new Color(0, 0, 0)));
-	    panListeAnnonces.setPreferredSize(new Dimension(520,410)); 				//size du panneau
+	    panListeAnnonces.setPreferredSize(new Dimension(380,410)); 				//size du panneau
 	    panListeAnnonces.add(listeAnnonces);
 	    
 	   		
-
 		//ajout tous les elements dans la fenetre
-		//container.setLayout(new GridLayout(2, 1));
 		container.add(panBouton);
 		container.add(panListeAnnonces);
 		
 	}
 	
-	
 	// Classes Listener
-	public class bouton_rechercheListener implements ActionListener { 						//Bouton recherche
-		public void actionPerformed(ActionEvent e1) {
-
-		}
-	}
-	
-	public class bouton_connexionListener implements ActionListener { 						//Bouton connexion
-		public void actionPerformed(ActionEvent e2) {
-
-		}
-	}
-
 	public class listeAnnonceListener implements ListSelectionListener {		//Liste des annonces
 		public void valueChanged(ListSelectionEvent l1) {
 			

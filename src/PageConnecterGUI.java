@@ -7,15 +7,18 @@ import javax.swing.border.LineBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-public class PageConnecterGUI extends JFrame {
+public class PageConnecterGUI extends JFrame implements ActionListener {
 	
 	private JPanel container = new JPanel();
 
 	private JPanel panBouton = new JPanel();
 	private JButton bouton_recherche = new JButton("Recherche");
-	private JButton bouton_deposer = new JButton("Déposer");
+	private JButton bouton_deposer = new JButton("Déposer annonce");
 	private JButton bouton_compte = new JButton("Mon compte");
 	private JButton bouton_deconnexion = new JButton("Déconnexion");
+	
+	private JTextField tRecherche = new JTextField(10); //champ de recherche
+	private String recherche;	//variable récupération recherche
 	
 	private JPanel panListeAnnonces = new JPanel();
 	private DefaultListModel liste_des_annonces = new DefaultListModel();
@@ -39,14 +42,21 @@ public class PageConnecterGUI extends JFrame {
 	private void AjoutElements() {
 		
 		// Creation des boutons
-		bouton_recherche.setPreferredSize(new Dimension(150, 40)); 							//dimension du bouton1
-		bouton_recherche.addActionListener(new bouton_rechercheListener());
-		bouton_deposer.setPreferredSize(new Dimension(150, 40)); 							//dimension du bouton2    
-	    bouton_deposer.addActionListener(new bouton_deposerListener());
-	    bouton_compte.setPreferredSize(new Dimension(150, 40)); 							//dimension du bouton3    
-	    bouton_compte.addActionListener(new bouton_compteListener());
-	    bouton_deconnexion.setPreferredSize(new Dimension(150, 40)); 							//dimension du bouton4    
-	    bouton_deconnexion.addActionListener(new bouton_deconnexionListener());
+		bouton_recherche.setPreferredSize(new Dimension(100, 40)); 							//dimension du bouton1
+		bouton_recherche.addActionListener(this);
+		bouton_recherche.setActionCommand("Rechercher");
+		
+		bouton_deposer.setPreferredSize(new Dimension(130, 40)); 							//dimension du bouton2    
+		bouton_deposer.addActionListener(this);
+		bouton_deposer.setActionCommand("Deposer");
+	    
+	    bouton_compte.setPreferredSize(new Dimension(110, 40)); 							//dimension du bouton3    
+	    bouton_compte.addActionListener(this);
+	    bouton_compte.setActionCommand("Compte");
+	    
+	    bouton_deconnexion.setPreferredSize(new Dimension(120, 40)); 							//dimension du bouton4    
+	    bouton_deconnexion.addActionListener(this);
+	    bouton_deconnexion.setActionCommand("Deconnexion");
 
 		panBouton.setLayout(new GridLayout(1, 4));
 		panBouton.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -54,6 +64,7 @@ public class PageConnecterGUI extends JFrame {
 		panBouton.setPreferredSize(new Dimension(630,50)); 						//size du panneau
 		panBouton.setBackground(Color.RED); 									//couleur fond panneau bouton
 		panBouton.add(bouton_recherche);
+		panBouton.add(tRecherche); 												//Champ de recherche
 		panBouton.add(bouton_deposer);
 		panBouton.add(bouton_compte);
 		panBouton.add(bouton_deconnexion);
@@ -79,32 +90,29 @@ public class PageConnecterGUI extends JFrame {
 	}
 	
 	// Classes Listener
-	public class bouton_rechercheListener implements ActionListener { 						//Bouton recherche
-		public void actionPerformed(ActionEvent e1) {
-
-		}
-	}
-	
-	public class bouton_deposerListener implements ActionListener { 						//Bouton deposer
-		public void actionPerformed(ActionEvent e2) {
-
-		}
-	}
-	
-	public class bouton_compteListener implements ActionListener { 						//Bouton mon compte
-		public void actionPerformed(ActionEvent e3) {
-
-		}
-	}
-	
-	public class bouton_deconnexionListener implements ActionListener { 						//Bouton deconnexion
-		public void actionPerformed(ActionEvent e4) {
-
-		}
-	}
-
 	public class listeAnnonceListener implements ListSelectionListener {		//Liste des annonces
 		public void valueChanged(ListSelectionEvent l1) {
+			
+		}
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent event) {
+		// TODO Auto-generated method stub
+		if(event.getActionCommand().equals("Deonnexion")){
+			//PageConnexionGUI pc = new PageConnexionGUI(); 
+			
+		}
+		
+		if(event.getActionCommand().equals("Rechercher")){
+			recherche = tRecherche.getText();									//récupérer les valeurs du champ 
+		}
+		
+		if(event.getActionCommand().equals("Deposer")){
+			
+		}
+		
+		if(event.getActionCommand().equals("Compte")){
 			
 		}
 	}
