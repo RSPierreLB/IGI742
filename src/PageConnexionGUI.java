@@ -54,21 +54,21 @@ public class PageConnexionGUI extends JFrame implements ActionListener{
 		bouton_annuler.setActionCommand("Annuler");
 		container.add(bouton_annuler);  
 		
-	    bouton_connexion.addActionListener(new bouton_connexionListener());
+	    bouton_connexion.addActionListener(this);
 	    bouton_connexion.setActionCommand("Connexion");
 		container.add(bouton_connexion);
 		
 		
 		lCreation.setHorizontalAlignment(SwingConstants.CENTER);
 		container.add(lCreation);
-		bouton_creer_compte.addActionListener(new bouton_creer_compteListener());
+		bouton_creer_compte.addActionListener(this);
 		bouton_creer_compte.setActionCommand("Creer_compte");
 		container.add(bouton_creer_compte);
 		
 	}
 	
 	//Classes ecoutant les Boutons	  
-	public class bouton_annulerListener implements ActionListener { 		// bouton_annuler bouton annuler
+	/*public class bouton_annulerListener implements ActionListener { 		// bouton_annuler bouton annuler
 		public void actionPerformed(ActionEvent e1) {
 			if((JButton)e1.getSource()==bouton_annuler) {
 				setVisible(false);
@@ -90,7 +90,7 @@ public class PageConnexionGUI extends JFrame implements ActionListener{
 				
 			}
 		}  
-	}
+	}*/
 
 	@Override
 	public void actionPerformed(ActionEvent event) {

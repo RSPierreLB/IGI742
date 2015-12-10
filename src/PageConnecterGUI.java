@@ -8,7 +8,8 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 public class PageConnecterGUI extends JFrame {
-
+	
+	
 	private JPanel container = new JPanel();
 
 	private JPanel panBouton = new JPanel();
