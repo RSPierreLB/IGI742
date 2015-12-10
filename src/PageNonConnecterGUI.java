@@ -1,9 +1,6 @@
-
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowListener;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -19,8 +16,8 @@ public class PageNonConnecterGUI extends JFrame implements ActionListener {
 	private JButton bouton_connexion = new JButton("Connexion");
 	private JButton bouton_recherche = new JButton("Recherche");
 	
-	private JTextField tRecherche = new JTextField(30); //champ de recherche
-	private String recherche;	//variable récupération recherche
+	private JTextField tRecherche = new JTextField(10); //champ de recherche
+	private String recherche;	//variable rÃ©cupÃ©ration recherche
 	
 	private JPanel panListeAnnonces = new JPanel();
 	private DefaultListModel liste_des_annonces = new DefaultListModel();
@@ -43,11 +40,11 @@ public class PageNonConnecterGUI extends JFrame implements ActionListener {
 	private void AjoutElements() {
 		
 		// Creation des boutons
-		bouton_recherche.setPreferredSize(new Dimension(200, 40)); 							//dimension du bouton1
+		bouton_recherche.setPreferredSize(new Dimension(100, 40)); 							//dimension du bouton1
 		bouton_recherche.addActionListener(this);
 		bouton_recherche.setActionCommand("Rechercher");
 		
-		bouton_connexion.setPreferredSize(new Dimension(200, 40)); 							//dimension du bouton2    
+		bouton_connexion.setPreferredSize(new Dimension(100, 40)); 							//dimension du bouton2    
 		bouton_connexion.addActionListener(this);
 		bouton_connexion.setActionCommand("Connexion");
 		
@@ -106,12 +103,13 @@ public class PageNonConnecterGUI extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
-		if(event.getActionCommand().equals("bouton_connexion")){
+		if(event.getActionCommand().equals("Connexion")){
 			PageConnexionGUI pc = new PageConnexionGUI(); 
+			
 		}
 		
-		if(event.getActionCommand().equals("bouton_recherche")){
-			recherche = tRecherche.getText();//récupérer les valeurs du champ 
+		if(event.getActionCommand().equals("Rechercher")){
+			recherche = tRecherche.getText();					//rÃ©cupÃ©rer les valeurs du champ 
 		}
 	}
 
