@@ -9,14 +9,13 @@ import javax.swing.event.ListSelectionListener;
 
 public class PageConnecterGUI extends JFrame {
 	
-	
 	private JPanel container = new JPanel();
 
 	private JPanel panBouton = new JPanel();
-	private JButton b1 = new JButton("Recherche");
-	private JButton b2 = new JButton("Déposer");
-	private JButton b3 = new JButton("Mon compte");
-	private JButton b4 = new JButton("Déconnexion");
+	private JButton bouton_recherche = new JButton("Recherche");
+	private JButton bouton_deposer = new JButton("Déposer");
+	private JButton bouton_compte = new JButton("Mon compte");
+	private JButton bouton_deconnexion = new JButton("Déconnexion");
 	
 	private JPanel panListeAnnonces = new JPanel();
 	private DefaultListModel liste_des_annonces = new DefaultListModel();
@@ -40,24 +39,24 @@ public class PageConnecterGUI extends JFrame {
 	private void AjoutElements() {
 		
 		// Creation des boutons
-		b1.setPreferredSize(new Dimension(150, 40)); 							//dimension du bouton1
-		b1.addActionListener(new b1Listener());
-		b2.setPreferredSize(new Dimension(150, 40)); 							//dimension du bouton2    
-	    b2.addActionListener(new b2Listener());
-	    b3.setPreferredSize(new Dimension(150, 40)); 							//dimension du bouton3    
-	    b3.addActionListener(new b3Listener());
-	    b4.setPreferredSize(new Dimension(150, 40)); 							//dimension du bouton4    
-	    b4.addActionListener(new b4Listener());
+		bouton_recherche.setPreferredSize(new Dimension(150, 40)); 							//dimension du bouton1
+		bouton_recherche.addActionListener(new bouton_rechercheListener());
+		bouton_deposer.setPreferredSize(new Dimension(150, 40)); 							//dimension du bouton2    
+	    bouton_deposer.addActionListener(new bouton_deposerListener());
+	    bouton_compte.setPreferredSize(new Dimension(150, 40)); 							//dimension du bouton3    
+	    bouton_compte.addActionListener(new bouton_compteListener());
+	    bouton_deconnexion.setPreferredSize(new Dimension(150, 40)); 							//dimension du bouton4    
+	    bouton_deconnexion.addActionListener(new bouton_deconnexionListener());
 
 		panBouton.setLayout(new GridLayout(1, 4));
 		panBouton.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panBouton.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		panBouton.setPreferredSize(new Dimension(630,50)); 						//size du panneau
 		panBouton.setBackground(Color.RED); 									//couleur fond panneau bouton
-		panBouton.add(b1);
-		panBouton.add(b2);
-		panBouton.add(b3);
-		panBouton.add(b4);
+		panBouton.add(bouton_recherche);
+		panBouton.add(bouton_deposer);
+		panBouton.add(bouton_compte);
+		panBouton.add(bouton_deconnexion);
 	    
 		
 		// Affichage des annonces
@@ -80,25 +79,25 @@ public class PageConnecterGUI extends JFrame {
 	}
 	
 	// Classes Listener
-	public class b1Listener implements ActionListener { 						//Bouton recherche
+	public class bouton_rechercheListener implements ActionListener { 						//Bouton recherche
 		public void actionPerformed(ActionEvent e1) {
 
 		}
 	}
 	
-	public class b2Listener implements ActionListener { 						//Bouton deposer
+	public class bouton_deposerListener implements ActionListener { 						//Bouton deposer
 		public void actionPerformed(ActionEvent e2) {
 
 		}
 	}
 	
-	public class b3Listener implements ActionListener { 						//Bouton mon compte
+	public class bouton_compteListener implements ActionListener { 						//Bouton mon compte
 		public void actionPerformed(ActionEvent e3) {
 
 		}
 	}
 	
-	public class b4Listener implements ActionListener { 						//Bouton deconnexion
+	public class bouton_deconnexionListener implements ActionListener { 						//Bouton deconnexion
 		public void actionPerformed(ActionEvent e4) {
 
 		}

@@ -28,3 +28,7 @@
 /Type.class
 /Utilisateur.class
 /JeuDeTest.class
+/PageConnecterGUI$bouton_deconnexionListener.class
+/PageConnecterGUI$bouton_compteListener.class
+/PageConnecterGUI$bouton_deposerListener.class
+/PageConnecterGUI$bouton_rechercheListener.class
