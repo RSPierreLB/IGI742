@@ -1,3 +1,4 @@
+/Main.class
 /PageAnnonceDetaillerGUI$bContacterListener.class
 /PageAnnonceDetaillerGUI.class
 /PageConnecterGUI$b1Listener.class
@@ -22,11 +23,8 @@
 /PageNonConnecterGUI$bouton_rechercheListener.class
 /PageNonConnecterGUI$listeAnnonceListener.class
 /PageNonConnecterGUI.class
-/Administrateur.class
-/Annonce.class
-/KeyWords.class
-/Main.class
 /Profil.class
 /Recherche.class
 /Type.class
 /Utilisateur.class
+/JeuDeTest.class
