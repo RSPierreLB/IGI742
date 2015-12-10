@@ -24,6 +24,9 @@ public class PageDeposerAnnonceGUI extends JFrame {
 	protected JTextField tPrix = new JTextField();
 	protected JTextArea textService = new JTextArea();
 	protected JTextArea textDescription = new JTextArea();
+
+	private JScrollPane scrollDesc = new JScrollPane(textDescription);
+	private JScrollPane scrollService = new JScrollPane(textService);
 	
 	
 	// Constructor
@@ -59,7 +62,7 @@ public class PageDeposerAnnonceGUI extends JFrame {
 
 		lDescription.setHorizontalAlignment(SwingConstants.CENTER);
 		container.add(lDescription);
-		container.add(textDescription);
+		container.add(scrollDesc);
 		
 		container.add(jServPrix);
 		jServPrix.addActionListener(new jServPrixListener());
@@ -74,7 +77,7 @@ public class PageDeposerAnnonceGUI extends JFrame {
 		
 		lService.setHorizontalAlignment(SwingConstants.CENTER);
 		container.add(lService);
-		container.add(textService);
+		container.add(scrollService);
 		textService.enable(false);
 		textService.setBackground(Color.LIGHT_GRAY);
 

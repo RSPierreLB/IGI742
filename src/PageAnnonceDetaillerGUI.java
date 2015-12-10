@@ -13,6 +13,9 @@ public class PageAnnonceDetaillerGUI extends JFrame implements ActionListener {
 	protected JTextArea textService = new JTextArea();
 	protected JTextArea textDescription = new JTextArea();
 	
+	private JScrollPane scrollDesc = new JScrollPane(textDescription);
+	private JScrollPane scrollService = new JScrollPane(textService);
+	
 	private JButton bouton_contacter = new JButton("Contacter");
 	
 	
@@ -46,10 +49,10 @@ public class PageAnnonceDetaillerGUI extends JFrame implements ActionListener {
 		container.add(tPhoto);
 		
 		textDescription.setText("Description");
-		container.add(textDescription);
+		container.add(scrollDesc);
 		
 		textService.setText("Prix ou Service");
-		container.add(textService);
+		container.add(scrollService);
 
 		bouton_contacter.addActionListener(this);
 		bouton_contacter.setActionCommand("Contacter");
