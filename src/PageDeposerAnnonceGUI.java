@@ -19,9 +19,9 @@ public class PageDeposerAnnonceGUI extends JFrame {
 	private JLabel lPhoto = new JLabel("Photo :");
 	private JLabel lVide = new JLabel("");
 	
-	protected JTextField tTitre = new JTextField(15);
-	protected JTextField tPhoto = new JTextField(15);
-	protected JTextField tPrix = new JTextField(6);
+	protected JTextField tTitre = new JTextField();
+	protected JTextField tPhoto = new JTextField();
+	protected JTextField tPrix = new JTextField();
 	protected JTextArea textService = new JTextArea();
 	protected JTextArea textDescription = new JTextArea();
 	

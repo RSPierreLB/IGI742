@@ -15,12 +15,12 @@ public class PageMonCompteGUI extends JFrame implements ActionListener {
 	private JLabel lLogin = new JLabel("Login :");
 	private JLabel lPassword = new JLabel("Password :");
 	
-	protected JTextField tNom = new JTextField(15);
-	protected JTextField tPrenom = new JTextField(15);
-	protected JTextField tPseudo = new JTextField(15);
-	protected JTextField tPhoto = new JTextField(15);
-	protected JTextField tLogin = new JTextField(15);
-	protected JPasswordField tPassword = new JPasswordField(15);
+	protected JTextField tNom = new JTextField();
+	protected JTextField tPrenom = new JTextField();
+	protected JTextField tPseudo = new JTextField();
+	protected JTextField tPhoto = new JTextField();
+	protected JTextField tLogin = new JTextField();
+	protected JPasswordField tPassword = new JPasswordField();
 	
 	private JButton bouton_annuler = new JButton("Annuler");
 	private JButton bouton_modifier = new JButton("Modifier");

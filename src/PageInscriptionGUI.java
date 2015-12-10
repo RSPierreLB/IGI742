@@ -13,10 +13,10 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 	private JLabel lPseudo = new JLabel("Pseudo :");
 	private JLabel lPhoto = new JLabel("Photo :");
 	
-	protected JTextField tNom = new JTextField(15);
-	protected JTextField tPrenom = new JTextField(15);
-	protected JTextField tPseudo = new JTextField(15);
-	protected JTextField tPhoto = new JTextField(15);
+	protected JTextField tNom = new JTextField();
+	protected JTextField tPrenom = new JTextField();
+	protected JTextField tPseudo = new JTextField();
+	protected JTextField tPhoto = new JTextField();
 	
 	private JButton bouton_annuler = new JButton("Annuler");
 	private JButton bouton_inscription = new JButton("Inscription");
