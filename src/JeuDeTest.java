@@ -4,6 +4,7 @@ public class JeuDeTest {
 		// TODO Auto-generated method stub
 		PageNonConnecterGUI pn = new PageNonConnecterGUI();
 		//PageConnexionGUI pc = new PageConnexionGUI();
+		PageConnecterGUI pcn = new PageConnecterGUI();
 	}
 
 }

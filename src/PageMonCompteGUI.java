@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class PageMonCompteGUI extends JFrame {
+public class PageMonCompteGUI extends JFrame implements ActionListener {
 
 	private JPanel container = new JPanel();
 	
@@ -22,8 +22,8 @@ public class PageMonCompteGUI extends JFrame {
 	protected JTextField tLogin = new JTextField(15);
 	protected JPasswordField tPassword = new JPasswordField(15);
 	
-	private JButton bAnnuler = new JButton("Annuler");
-	private JButton bModifier = new JButton("Modifier");
+	private JButton bouton_annuler = new JButton("Annuler");
+	private JButton bouton_modifier = new JButton("Modifier");
 
 	
 	// Constructor
@@ -71,29 +71,28 @@ public class PageMonCompteGUI extends JFrame {
 		container.add(lPassword);
 		container.add(tPassword);
 		
-		bAnnuler.addActionListener(new bAnnulerListener());
-		container.add(bAnnuler);  
+		bouton_annuler.addActionListener(this);
+		bouton_annuler.setActionCommand("Annuler");
+		container.add(bouton_annuler);  
 		
-		bModifier.addActionListener(new bModifierListener());
-		container.add(bModifier);
+		bouton_modifier.addActionListener(this);
+		bouton_modifier.setActionCommand("Modifier");
+		container.add(bouton_modifier);
 	    
 	}
-	
-	//Classes ecoutant les Boutons	  
-	public class bAnnulerListener implements ActionListener { 		// b1 bouton annuler
-		public void actionPerformed(ActionEvent e1) {
-			if((JButton)e1.getSource()==bAnnuler) {
-				setVisible(false);
-			}
+
+
+	@Override
+	public void actionPerformed(ActionEvent event) {
+		// TODO Auto-generated method stub
+		if(event.getActionCommand().equals("Annuler")){
+			//PageConnexionGUI pc = new PageConnexionGUI(); 
+			
+		}
+		
+		if(event.getActionCommand().equals("Modifier")){
+ 
 		}
 	}
-	  
-	public class bModifierListener implements ActionListener {			// b2 bouton connexion
-		public void actionPerformed(ActionEvent e2) {
-			if((JButton)e2.getSource()==bModifier) {
-				
-			}
-		}  
-	}
-
+	
 }
