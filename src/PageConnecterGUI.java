@@ -99,9 +99,9 @@ public class PageConnecterGUI extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
-		if(event.getActionCommand().equals("Deonnexion")) {
-			//PageConnexionGUI pc = new PageConnexionGUI(); 
-			
+		if(event.getActionCommand().equals("Deconnexion")) {
+			PageNonConnecterGUI pnc = new PageNonConnecterGUI();
+			// Doit fermer cette page ...
 		}
 		
 		if(event.getActionCommand().equals("Rechercher")) {
@@ -109,11 +109,11 @@ public class PageConnecterGUI extends JFrame implements ActionListener {
 		}
 		
 		if(event.getActionCommand().equals("Deposer")) {
-			
+			PageDeposerAnnonceGUI pda = new PageDeposerAnnonceGUI(); 
 		}
 		
 		if(event.getActionCommand().equals("Compte")) {
-			
+			PageMonCompteGUI pmc = new PageMonCompteGUI();			
 		}
 	}
 }

@@ -75,12 +75,12 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
 		if(event.getActionCommand().equals("Annuler")) {
-			//PageConnexionGUI pc = new PageConnexionGUI(); 
+			//doit fermer cette page 
 			
 		}
 		
 		if(event.getActionCommand().equals("Inscription")) {
-
+			PageConnexionGUI pc = new PageConnexionGUI(); 
 		}
 	}
 	

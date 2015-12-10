@@ -72,11 +72,12 @@ public class PageConnexionGUI extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
 		if(event.getActionCommand().equals("Annuler")) {
-			
+			//doit fermer cette page
 		}
 		
 		if(event.getActionCommand().equals("Connexion")) {
-			
+			//doit vérifier les identifiants avant
+			PageConnecterGUI pc = new PageConnecterGUI();
 		}
 		
 		if(event.getActionCommand().equals("Creer_compte")) {
