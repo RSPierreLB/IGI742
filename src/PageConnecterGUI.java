@@ -16,7 +16,6 @@ public class PageConnecterGUI extends JFrame implements ActionListener {
 	private JButton bouton_deposer = new JButton("Déposer annonce");
 	private JButton bouton_compte = new JButton("Mon compte");
 	private JButton bouton_deconnexion = new JButton("Déconnexion");
-	
 	private JTextField tRecherche = new JTextField(10); //champ de recherche
 	private String recherche;	//variable récupération recherche
 	
@@ -24,10 +23,13 @@ public class PageConnecterGUI extends JFrame implements ActionListener {
 	private DefaultListModel liste_des_annonces = new DefaultListModel();
 	private JList listeAnnonces = new JList(liste_des_annonces);
 	
+	private JPanel panPseudo = new JPanel();
+	protected JLabel lPseudo = new JLabel();
+	
 	
 	public PageConnecterGUI() {
 
-		this.setSize(650, 500); 												//size de la fenetre
+		this.setSize(650, 540); 												//size de la fenetre
 		this.setTitle("Application de partage sur le campus"); 					//titre de la fenetre
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -40,6 +42,19 @@ public class PageConnecterGUI extends JFrame implements ActionListener {
 
 	
 	private void AjoutElements() {
+		
+		//ecran d'affichage Pseudo
+		lPseudo.setFont(new Font("Arial", Font.ITALIC, 12));
+		lPseudo.setHorizontalAlignment(JLabel.CENTER);
+		lPseudo.setPreferredSize(new Dimension(100, 20)); 					//dimension du panneau
+		//nomSportif.setText("Nom : " + Pseudo.getNomSportif()); 			// affiche pseudo
+		lPseudo.setText("Pseudo : alexxx ");
+		
+		panPseudo.setBorder(new LineBorder(new Color(0, 0, 0))); 			//couleur de la bordure du panneau d'affichage
+		panPseudo.setPreferredSize(new Dimension(630,30)); 					//dimension du panneau
+		panPseudo.setBackground(Color.BLUE); 								//couleur du fond
+		panPseudo.add(lPseudo);
+		
 		
 		// Creation des boutons
 		bouton_recherche.setPreferredSize(new Dimension(100, 40)); 							//dimension du bouton1
@@ -63,8 +78,8 @@ public class PageConnecterGUI extends JFrame implements ActionListener {
 		panBouton.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		panBouton.setPreferredSize(new Dimension(630,50)); 						//size du panneau
 		panBouton.setBackground(Color.RED); 									//couleur fond panneau bouton
-		panBouton.add(bouton_recherche);
 		panBouton.add(tRecherche); 												//Champ de recherche
+		panBouton.add(bouton_recherche);
 		panBouton.add(bouton_deposer);
 		panBouton.add(bouton_compte);
 		panBouton.add(bouton_deconnexion);
@@ -84,7 +99,8 @@ public class PageConnecterGUI extends JFrame implements ActionListener {
 
 		//ajout tous les elements dans la fenetre
 		//container.setLayout(new GridLayout(2, 1));
-		container.add(panBouton);
+	    container.add(panPseudo);
+	    container.add(panBouton);
 		container.add(panListeAnnonces);
 		
 	}

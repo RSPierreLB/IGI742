@@ -53,10 +53,10 @@ public class PageNonConnecterGUI extends JFrame implements ActionListener {
 		panBouton.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		panBouton.setPreferredSize(new Dimension(380,50)); 						//size du panneau
 		panBouton.setBackground(Color.RED); 									//couleur fond panneau bouton
-		panBouton.add(bouton_recherche);
-		panBouton.add(tRecherche); 												//Champ de recherche
 		panBouton.add(bouton_connexion);
-	    
+		panBouton.add(tRecherche); 												//Champ de recherche
+		panBouton.add(bouton_recherche);
+		
 		
 		// Affichage des annonces
 	    listeAnnonces.setBackground(Color.WHITE);								//couleur du fond de la liste
