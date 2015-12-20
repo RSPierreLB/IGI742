@@ -12,14 +12,14 @@ public class PageMonCompteGUI extends JFrame implements ActionListener {
 	private JLabel lPrenom = new JLabel("Prenom :");
 	private JLabel lPseudo = new JLabel("Pseudo :");
 	private JLabel lPhoto = new JLabel("Photo :");
-	private JLabel lLogin = new JLabel("Login :");
+	private JLabel lContact = new JLabel("Téléphone :");
 	private JLabel lPassword = new JLabel("Password :");
 	
 	protected JTextField tNom = new JTextField();
 	protected JTextField tPrenom = new JTextField();
 	protected JTextField tPseudo = new JTextField();
 	protected JTextField tPhoto = new JTextField();
-	protected JTextField tLogin = new JTextField();
+	protected JTextField tContact = new JTextField();
 	protected JPasswordField tPassword = new JPasswordField();
 	
 	private JButton bouton_annuler = new JButton("Annuler");
@@ -55,17 +55,17 @@ public class PageMonCompteGUI extends JFrame implements ActionListener {
 		container.add(lPrenom);
 		container.add(tPrenom);
 		
-		lPseudo.setHorizontalAlignment(SwingConstants.CENTER);
-		container.add(lPseudo);
-		container.add(tPseudo);
+		lContact.setHorizontalAlignment(SwingConstants.CENTER);
+		container.add(lContact);
+		container.add(tContact);
 		
 		lPhoto.setHorizontalAlignment(SwingConstants.CENTER);
 		container.add(lPhoto);
 		container.add(tPhoto);
 		
-		lLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		container.add(lLogin);
-		container.add(tLogin);
+		lPseudo.setHorizontalAlignment(SwingConstants.CENTER);
+		container.add(lPseudo);
+		container.add(tPseudo);
 		
 		lPassword.setHorizontalAlignment(SwingConstants.CENTER);
 		container.add(lPassword);
@@ -90,7 +90,7 @@ public class PageMonCompteGUI extends JFrame implements ActionListener {
 			tPrenom.setText(null);
 			tPseudo.setText(null);
 			tPhoto.setText(null);
-			tLogin.setText(null);
+			tContact.setText(null);
 			tPassword.setText(null);
 			this.dispose();
 		}

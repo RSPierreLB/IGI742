@@ -8,11 +8,11 @@ public class PageConnexionGUI extends JFrame implements ActionListener {
 
 	private JPanel container = new JPanel();
 	
-	private JLabel lLogin = new JLabel("Login :");
+	private JLabel lPseudo = new JLabel("Pseudo :");
 	private JLabel lPassword = new JLabel("Password :");
 	private JLabel lCreation = new JLabel("Pas de compte ?");
 	
-	protected JTextField tLogin = new JTextField(15);
+	protected JTextField tPseudo = new JTextField(15);
 	protected JPasswordField tPassword = new JPasswordField(15);
 	
 	private JButton bouton_annuler = new JButton("Annuler");
@@ -42,9 +42,9 @@ public class PageConnexionGUI extends JFrame implements ActionListener {
 		container.setBackground(Color.LIGHT_GRAY);
 	    container.setLayout(new GridLayout(4, 2, 5, 5));
 	    
-		lLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		container.add(lLogin);
-		container.add(tLogin);
+		lPseudo.setHorizontalAlignment(SwingConstants.CENTER);
+		container.add(lPseudo);
+		container.add(tPseudo);
 		
 		lPassword.setHorizontalAlignment(SwingConstants.CENTER);
 		container.add(lPassword);
@@ -72,7 +72,7 @@ public class PageConnexionGUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
 		if(event.getActionCommand().equals("Annuler")) {
-			tLogin.setText(null);
+			tPseudo.setText(null);
 			tPassword.setText(null);
 			this.dispose();
 		}

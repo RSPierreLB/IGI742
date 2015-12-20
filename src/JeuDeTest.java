@@ -5,6 +5,7 @@ public class JeuDeTest {
 		PageNonConnecterGUI pnc = new PageNonConnecterGUI();
 		//PageConnecterGUI pc = new PageConnecterGUI();
 		//PageAnnonceDetaillerGUI pa = new PageAnnonceDetaillerGUI();
+		PageInscriptionGUI pi = new PageInscriptionGUI();
 		
 	}
 

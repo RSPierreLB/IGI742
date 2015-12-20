@@ -13,7 +13,6 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 	private JLabel lPseudo = new JLabel("Pseudo :");
 	private JLabel lPhoto = new JLabel("Photo :");
 	private JLabel lContact = new JLabel("Téléphone :");
-	private JLabel lLogin = new JLabel("Login :");
 	private JLabel lPassword = new JLabel("Password :");
 	
 	protected JTextField tNom = new JTextField();
@@ -21,7 +20,6 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 	protected JTextField tPseudo = new JTextField();
 	protected JTextField tPhoto = new JTextField();
 	protected JTextField tContact = new JTextField();
-	protected JTextField tLogin = new JTextField();
 	protected JPasswordField tPassword = new JPasswordField();
 	
 	private JButton bouton_annuler = new JButton("Annuler");
@@ -33,13 +31,13 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 
 	public PageInscriptionGUI() {
 
-		this.setSize(250, 350);  //size de la fenetre
-		this.setTitle("Inscription"); //titre de la fenetre
+		this.setSize(250, 300);									//size de la fenetre
+		this.setTitle("Inscription");							//titre de la fenetre
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		this.setAlwaysOnTop(false);
-		this.AjoutElements(); //ajouter les elements qui sont dans la fonction
+		this.AjoutElements();									//ajouter les elements qui sont dans la fonction
 		this.setContentPane(container);
 		this.setVisible(true);
 	}
@@ -50,7 +48,7 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 	private void AjoutElements() {
 		
 		container.setBackground(Color.LIGHT_GRAY);
-	    container.setLayout(new GridLayout(8, 2, 5, 5));
+	    container.setLayout(new GridLayout(7, 2, 5, 5));
 	    
 		lNom.setHorizontalAlignment(SwingConstants.CENTER);
 		container.add(lNom);
@@ -60,10 +58,6 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 		container.add(lPrenom);
 		container.add(tPrenom);
 		
-		lPseudo.setHorizontalAlignment(SwingConstants.CENTER);
-		container.add(lPseudo);
-		container.add(tPseudo);
-		
 		lPhoto.setHorizontalAlignment(SwingConstants.CENTER);
 		container.add(lPhoto);
 		container.add(tPhoto);
@@ -72,9 +66,9 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 		container.add(lContact);
 		container.add(tContact);
 		
-		lLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		container.add(lLogin);
-		container.add(tLogin);
+		lPseudo.setHorizontalAlignment(SwingConstants.CENTER);
+		container.add(lPseudo);
+		container.add(tPseudo);
 		
 		lPassword.setHorizontalAlignment(SwingConstants.CENTER);
 		container.add(lPassword);
@@ -96,8 +90,10 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 		if(event.getActionCommand().equals("Annuler")) {
 			tNom.setText(null);
 			tPrenom.setText(null);
-			tPseudo.setText(null);
 			tPhoto.setText(null);
+			lContact.setText(null);
+			tPseudo.setText(null);
+			lPassword.setText(null);
 			this.dispose();
 		}
 		
@@ -105,7 +101,7 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 			//Ajouter les info à la base de donnée
 			PageConnexionGUI pc = new PageConnexionGUI();
 			this.dispose();
-			jOpInscription.showMessageDialog(null, "Welcome", "Inscription réussi", JOptionPane.INFORMATION_MESSAGE);
+			jOpInscription.showMessageDialog(null, "Inscription réussi", "Welcome", JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 	
