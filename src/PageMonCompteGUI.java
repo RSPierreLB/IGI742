@@ -32,7 +32,7 @@ public class PageMonCompteGUI extends JFrame implements ActionListener {
 
 		this.setSize(300, 350);  //size de la fenetre
 		this.setTitle("Mon compte"); //titre de la fenetre
-		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		this.setAlwaysOnTop(true);
@@ -86,11 +86,14 @@ public class PageMonCompteGUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
 		if(event.getActionCommand().equals("Annuler")) {
-			//doit fermer cette page
+			//Effacer les infos
+			this.dispose();
 		}
 		
 		if(event.getActionCommand().equals("Modifier")) {
+			//Modifier les infos de la base de donnée
 			PageConnecterGUI pc = new PageConnecterGUI();
+			this.dispose();
 		}
 	}
 	

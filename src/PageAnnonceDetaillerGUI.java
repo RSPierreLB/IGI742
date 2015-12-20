@@ -25,7 +25,7 @@ public class PageAnnonceDetaillerGUI extends JFrame implements ActionListener {
 		
 		this.setSize(200, 300);  //size de la fenetre
 		this.setTitle("Annonce"); //titre de la fenetre
-		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		this.setAlwaysOnTop(true);
@@ -64,6 +64,7 @@ public class PageAnnonceDetaillerGUI extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		if(event.getActionCommand().equals("Contacter")) {
+			//Afficher les coordonnées
 			
 		}
 	

@@ -28,7 +28,7 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 
 		this.setSize(250, 250);  //size de la fenetre
 		this.setTitle("Inscription"); //titre de la fenetre
-		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		this.setAlwaysOnTop(true);
@@ -75,12 +75,14 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
 		if(event.getActionCommand().equals("Annuler")) {
-			//doit fermer cette page 
-			
+			//Effacer les infos
+			this.dispose();
 		}
 		
 		if(event.getActionCommand().equals("Inscription")) {
-			PageConnexionGUI pc = new PageConnexionGUI(); 
+			//Ajouter les info à la base de donnée
+			PageConnexionGUI pc = new PageConnexionGUI();
+			this.dispose();
 		}
 	}
 	

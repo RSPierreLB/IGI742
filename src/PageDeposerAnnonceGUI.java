@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 
-public class PageDeposerAnnonceGUI extends JFrame {
+public class PageDeposerAnnonceGUI extends JFrame implements ActionListener {
 	
 	private JPanel container = new JPanel();
 	
@@ -15,6 +15,7 @@ public class PageDeposerAnnonceGUI extends JFrame {
 	private JLabel lTitre = new JLabel("Titre :");
 	private JLabel lDescription = new JLabel("Description :");
 	private JLabel lPrix = new JLabel("Prix :");
+	private JLabel lContact = new JLabel("Coordonnée :");
 	private JLabel lService = new JLabel("Service :");
 	private JLabel lPhoto = new JLabel("Photo :");
 	private JLabel lVide = new JLabel("");
@@ -22,20 +23,24 @@ public class PageDeposerAnnonceGUI extends JFrame {
 	protected JTextField tTitre = new JTextField();
 	protected JTextField tPhoto = new JTextField();
 	protected JTextField tPrix = new JTextField();
+	protected JTextField tContact = new JTextField();
 	protected JTextArea textService = new JTextArea();
 	protected JTextArea textDescription = new JTextArea();
 
 	private JScrollPane scrollDesc = new JScrollPane(textDescription);
 	private JScrollPane scrollService = new JScrollPane(textService);
 	
+	private JButton bouton_annuler = new JButton("Annuler");
+	private JButton bouton_deposer = new JButton("Deposer");
+	
 	
 	// Constructor
 
 	public PageDeposerAnnonceGUI() {
 		
-		this.setSize(400, 300);  //size de la fenetre
+		this.setSize(350, 350);  //size de la fenetre
 		this.setTitle("Déposer une annonce"); //titre de la fenetre
-		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		this.setAlwaysOnTop(true);
@@ -50,7 +55,7 @@ public class PageDeposerAnnonceGUI extends JFrame {
 	private void AjoutElements() {
 		
 		container.setBackground(Color.LIGHT_GRAY);
-	    container.setLayout(new GridLayout(6, 2, 5, 5));
+	    container.setLayout(new GridLayout(8, 2, 5, 5));
 	    
 	    lTitre.setHorizontalAlignment(SwingConstants.CENTER);
 		container.add(lTitre);
@@ -59,6 +64,10 @@ public class PageDeposerAnnonceGUI extends JFrame {
 		lPhoto.setHorizontalAlignment(SwingConstants.CENTER);
 		container.add(lPhoto);
 		container.add(tPhoto);
+		
+		lContact.setHorizontalAlignment(SwingConstants.CENTER);
+		container.add(lContact);
+		container.add(tContact);
 
 		lDescription.setHorizontalAlignment(SwingConstants.CENTER);
 		container.add(lDescription);
@@ -80,6 +89,14 @@ public class PageDeposerAnnonceGUI extends JFrame {
 		container.add(scrollService);
 		textService.enable(false);
 		textService.setBackground(Color.LIGHT_GRAY);
+		
+		bouton_annuler.addActionListener(this);
+		bouton_annuler.setActionCommand("Annuler");
+		container.add(bouton_annuler);  
+		
+	    bouton_deposer.addActionListener(this);
+	    bouton_deposer.setActionCommand("Deposer");
+		container.add(bouton_deposer);
 
 	}
 	
@@ -106,6 +123,20 @@ public class PageDeposerAnnonceGUI extends JFrame {
 				textService.enable(false);
 				textService.setBackground(Color.LIGHT_GRAY);
 			}
+		}
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent event) {
+		// TODO Auto-generated method stub
+		if(event.getActionCommand().equals("Annuler")) {
+			//Effacer les infos de la page
+			this.dispose();
+		}
+		
+		if(event.getActionCommand().equals("Deposer")) {
+			//Ajouter l'annonce au panel
+			this.dispose();
 		}
 	}
 	

@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class PageConnexionGUI extends JFrame implements ActionListener{
+public class PageConnexionGUI extends JFrame implements ActionListener {
 
 	private JPanel container = new JPanel();
 	
@@ -25,7 +25,7 @@ public class PageConnexionGUI extends JFrame implements ActionListener{
 	public PageConnexionGUI() {
 		this.setSize(250, 200);  //size de la fenetre
 		this.setTitle("Connexion"); //titre de la fenetre
-		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		this.setAlwaysOnTop(true);
@@ -72,12 +72,15 @@ public class PageConnexionGUI extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
 		if(event.getActionCommand().equals("Annuler")) {
-			//doit fermer cette page
+			//Effacer les infos de la page
+			this.dispose();
 		}
 		
 		if(event.getActionCommand().equals("Connexion")) {
-			//doit vérifier les identifiants avant
+			//doit vérifier les identifiants avant dans la base de donnée
 			PageConnecterGUI pc = new PageConnecterGUI();
+			this.dispose();
+			//Fermer la page NonConnecter
 		}
 		
 		if(event.getActionCommand().equals("Creer_compte")) {

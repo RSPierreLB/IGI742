@@ -100,8 +100,7 @@ public class PageConnecterGUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
 		if(event.getActionCommand().equals("Deconnexion")) {
-			PageNonConnecterGUI pnc = new PageNonConnecterGUI();
-			// Doit fermer cette page ...
+			System.exit(0);
 		}
 		
 		if(event.getActionCommand().equals("Rechercher")) {
