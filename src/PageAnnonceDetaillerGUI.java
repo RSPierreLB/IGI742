@@ -18,7 +18,7 @@ public class PageAnnonceDetaillerGUI extends JFrame implements ActionListener {
 	
 	private JButton bouton_contacter = new JButton("Contacter");
 	
-	private JOptionPane jOp = new JOptionPane();
+	private JOptionPane jOpContact = new JOptionPane();
 	
 	// Constructor
 
@@ -70,7 +70,7 @@ public class PageAnnonceDetaillerGUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		if(event.getActionCommand().equals("Contacter")) {
 			//Afficher les coordonnées
-			jOp.showMessageDialog(null, "06 00 00 00 00", "Coordonnées", JOptionPane.INFORMATION_MESSAGE);
+			jOpContact.showMessageDialog(null, "06 00 00 00 00", "Coordonnées", JOptionPane.INFORMATION_MESSAGE);
 			
 		}
 	
