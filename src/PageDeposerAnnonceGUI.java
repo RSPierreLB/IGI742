@@ -130,7 +130,12 @@ public class PageDeposerAnnonceGUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
 		if(event.getActionCommand().equals("Annuler")) {
-			//Effacer les infos de la page
+			tTitre.setText(null);
+			tPhoto.setText(null);
+			tPrix.setText(null);
+			tContact.setText(null);
+			textService.setText(null);
+			textDescription.setText(null);
 			this.dispose();
 		}
 		

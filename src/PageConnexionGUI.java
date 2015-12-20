@@ -72,7 +72,8 @@ public class PageConnexionGUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
 		if(event.getActionCommand().equals("Annuler")) {
-			//Effacer les infos de la page
+			tLogin.setText(null);
+			tPassword.setText(null);
 			this.dispose();
 		}
 		

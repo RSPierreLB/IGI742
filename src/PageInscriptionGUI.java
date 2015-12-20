@@ -75,7 +75,10 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
 		if(event.getActionCommand().equals("Annuler")) {
-			//Effacer les infos
+			tNom.setText(null);
+			tPrenom.setText(null);
+			tPseudo.setText(null);
+			tPhoto.setText(null);
 			this.dispose();
 		}
 		
