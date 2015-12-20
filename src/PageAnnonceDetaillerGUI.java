@@ -18,6 +18,7 @@ public class PageAnnonceDetaillerGUI extends JFrame implements ActionListener {
 	
 	private JButton bouton_contacter = new JButton("Contacter");
 	
+	private JOptionPane jOp = new JOptionPane();
 	
 	// Constructor
 
@@ -28,7 +29,7 @@ public class PageAnnonceDetaillerGUI extends JFrame implements ActionListener {
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
-		this.setAlwaysOnTop(true);
+		this.setAlwaysOnTop(false);
 		this.AjoutElements(); //ajouter les elements qui sont dans la fonction
 		this.setContentPane(container);
 		this.setVisible(true);
@@ -41,16 +42,20 @@ public class PageAnnonceDetaillerGUI extends JFrame implements ActionListener {
 		
 		container.setBackground(Color.LIGHT_GRAY);
 	    container.setLayout(new GridLayout(5, 2, 5, 5));
-	    
+		
+	    tTitre.setEditable(false);
 		tTitre.setText("Titre");
 		container.add(tTitre);
 		
+		tPhoto.setEditable(false);
 		tPhoto.setText("Photo");
 		container.add(tPhoto);
 		
+		textDescription.setEditable(false);
 		textDescription.setText("Description");
 		container.add(scrollDesc);
 		
+		textService.setEditable(false);
 		textService.setText("Prix ou Service");
 		container.add(scrollService);
 
@@ -65,6 +70,7 @@ public class PageAnnonceDetaillerGUI extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		if(event.getActionCommand().equals("Contacter")) {
 			//Afficher les coordonnées
+			jOp.showMessageDialog(null, "06 00 00 00 00", "Coordonnées", JOptionPane.INFORMATION_MESSAGE);
 			
 		}
 	

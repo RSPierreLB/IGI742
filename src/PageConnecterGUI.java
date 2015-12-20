@@ -32,7 +32,7 @@ public class PageConnecterGUI extends JFrame implements ActionListener {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
-		this.setAlwaysOnTop(true);
+		this.setAlwaysOnTop(false);
 		this.AjoutElements(); 													//ajouter les elements qui sont dans la fonction
 		this.setContentPane(container);
 		this.setVisible(true);
