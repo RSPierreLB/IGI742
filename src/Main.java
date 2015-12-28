@@ -3,9 +3,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Administrateur admin= Administrateur.getInstance();
 		
-
+		PageNonConnecterGUI pnc = new PageNonConnecterGUI();
+		
+		
+		Administrateur admin= Administrateur.getInstance();
 		
 		Utilisateur u1= new Utilisateur("Lucas","Warnet");
 		
