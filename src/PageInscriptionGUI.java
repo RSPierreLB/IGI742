@@ -12,7 +12,7 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 	private JLabel lPrenom = new JLabel("Prenom :");
 	private JLabel lPseudo = new JLabel("Pseudo :");
 	private JLabel lPhoto = new JLabel("Photo :");
-	private JLabel lContact = new JLabel("Téléphone :");
+	private JLabel lContact = new JLabel("Contact :");
 	private JLabel lPassword = new JLabel("Password :");
 	private JLabel lDescription = new JLabel("Descritpion :");
 	
@@ -22,7 +22,9 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 	protected JTextField tPhoto = new JTextField();
 	protected JTextField tContact = new JTextField();
 	protected JPasswordField tPassword = new JPasswordField();
-	protected JTextField tDescription = new JTextField();
+	protected JTextArea textDescription = new JTextArea();
+	
+	private JScrollPane scrollDesc = new JScrollPane(textDescription);
 	
 	private JButton bouton_annuler = new JButton("Annuler");
 	private JButton bouton_inscription = new JButton("Inscription");
@@ -33,7 +35,7 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 
 	public PageInscriptionGUI() {
 
-		this.setSize(250, 300);									//size de la fenetre
+		this.setSize(250, 350);									//size de la fenetre
 		this.setTitle("Inscription");							//titre de la fenetre
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -50,7 +52,7 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 	private void AjoutElements() {
 		
 		container.setBackground(Color.LIGHT_GRAY);
-	    container.setLayout(new GridLayout(7, 2, 5, 5));
+	    container.setLayout(new GridLayout(8, 2, 5, 5));
 	    
 		lNom.setHorizontalAlignment(SwingConstants.CENTER);
 		container.add(lNom);
@@ -76,9 +78,9 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 		container.add(lPassword);
 		container.add(tPassword);
 		
-		lPassword.setHorizontalAlignment(SwingConstants.CENTER);
+		lDescription.setHorizontalAlignment(SwingConstants.CENTER);
 		container.add(lDescription);
-		container.add(tDescription);
+		container.add(scrollDesc);
 		
 		bouton_annuler.addActionListener(this);
 		bouton_annuler.setActionCommand("Annuler");
@@ -100,6 +102,7 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 			tContact.setText(null);
 			tPseudo.setText(null);
 			tPassword.setText(null);
+			textDescription.setText(null);
 			this.dispose();
 		}
 		
@@ -112,10 +115,10 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 				jOpInscription.showMessageDialog(null, "L'un des champs suivant est vide: Nom, Prenom, Pseudo ou Password", "Erreur", JOptionPane.ERROR_MESSAGE);
 			}
 			else{
-				if(tDescription.getText().isEmpty() ^ tPhoto.getText().isEmpty()){
+				if(textDescription.getText().isEmpty() ^ tPhoto.getText().isEmpty()){
 					jOpInscription.showMessageDialog(null, "Vous devez soit remplir descritpion et photo soit laisser les deux champs vide", "Erreur", JOptionPane.ERROR_MESSAGE);
 				}
-				else if(tDescription.getText().isEmpty() && tPhoto.getText().isEmpty()){
+				else if(textDescription.getText().isEmpty() && tPhoto.getText().isEmpty()){
 					Profil p = new Profil(tPrenom.getText(), tNom.getText(), tContact.getText(), tPseudo.getText(), tPassword.getText());
 				}
 			}
