@@ -2,7 +2,6 @@ import java.util.*;
 
 public class Profil extends Observable{
 
-	
 	private String prenom;
 	private String nom;
 	private String contact;
