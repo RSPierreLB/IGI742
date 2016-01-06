@@ -142,6 +142,22 @@ public class PageDeposerAnnonceGUI extends JFrame implements ActionListener {
 		if(event.getActionCommand().equals("Deposer")) {
 			//Ajouter l'annonce au panel
 			this.dispose();
+			if(tTitre.getText().isEmpty() || tPrenom.getText().isEmpty() || tPseudo.getText().isEmpty() || tPassword.getText().isEmpty() || tContact.getText().isEmpty()){
+				jOpInscription.showMessageDialog(null, "L'un des champs suivant est vide: Nom, Prenom, Pseudo ou Password", "Erreur", JOptionPane.ERROR_MESSAGE);
+			}
+			else{
+				if(tDescription.getText().isEmpty() ^ tPhoto.getText().isEmpty()){
+					jOpInscription.showMessageDialog(null, "Vous devez soit remplir descritpion et photo soit laisser les deux champs vide", "Erreur", JOptionPane.ERROR_MESSAGE);
+				}
+				else if(tDescription.getText().isEmpty() && tPhoto.getText().isEmpty()){
+					Profil p = new Profil(tPrenom.getText(), tNom.getText(), tContact.getText(), tPseudo.getText(), tPassword.getText());
+					jOpInscription.showMessageDialog(null, "Inscription réussi", "Welcome", JOptionPane.INFORMATION_MESSAGE);
+				}
+				else{
+					Profil p = new Profil(tPrenom.getText(), tNom.getText(), tContact.getText(), tPseudo.getText(), tPassword.getText(), tDescription.getText(), tPhoto.getText());
+					jOpInscription.showMessageDialog(null, "Inscription réussi", "Welcome", JOptionPane.INFORMATION_MESSAGE);
+				}
+			}
 		}
 	}
 	
