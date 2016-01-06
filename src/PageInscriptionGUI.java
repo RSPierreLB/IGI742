@@ -118,6 +118,9 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 				else if(tDescription.getText().isEmpty() && tPhoto.getText().isEmpty()){
 					Profil p = new Profil(tPrenom.getText(), tNom.getText(), tContact.getText(), tPseudo.getText(), tPassword.getText());
 				}
+				else{
+					Profil p = new Profil(tPrenom.getText(), tNom.getText(), tContact.getText(), tPseudo.getText(), tPassword.getText(), tDescription.getText(), tPhoto.getText());
+				}
 			}
 		}
 	}
