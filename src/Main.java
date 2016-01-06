@@ -9,9 +9,7 @@ public class Main {
 		
 		Administrateur admin= Administrateur.getInstance();
 		
-		Utilisateur u1= new Utilisateur("Lucas","Warnet");
-		
-		Profil p1= new Profil(u1, "pseudo", "password");
+		Profil p1= new Profil("prenom", "nom","contact", "pseudo", "password");
 		
 		Annonce a1 = new Annonce(p1,"titre", "prix", "type", "description");
 		
