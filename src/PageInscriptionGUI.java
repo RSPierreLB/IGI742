@@ -107,7 +107,7 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 			//Ajouter les info à la base de donnée
 			PageConnexionGUI pc = new PageConnexionGUI();
 			this.dispose();
-			jOpInscription.showMessageDialog(null, "Inscription réussi", "Welcome", JOptionPane.INFORMATION_MESSAGE);
+			
 			if(tNom.getText().isEmpty() || tPrenom.getText().isEmpty() || tPseudo.getText().isEmpty() || tPassword.getText().isEmpty() || tContact.getText().isEmpty()){
 				jOpInscription.showMessageDialog(null, "L'un des champs suivant est vide: Nom, Prenom, Pseudo ou Password", "Erreur", JOptionPane.ERROR_MESSAGE);
 			}
@@ -117,9 +117,11 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 				}
 				else if(tDescription.getText().isEmpty() && tPhoto.getText().isEmpty()){
 					Profil p = new Profil(tPrenom.getText(), tNom.getText(), tContact.getText(), tPseudo.getText(), tPassword.getText());
+					jOpInscription.showMessageDialog(null, "Inscription réussi", "Welcome", JOptionPane.INFORMATION_MESSAGE);
 				}
 				else{
 					Profil p = new Profil(tPrenom.getText(), tNom.getText(), tContact.getText(), tPseudo.getText(), tPassword.getText(), tDescription.getText(), tPhoto.getText());
+					jOpInscription.showMessageDialog(null, "Inscription réussi", "Welcome", JOptionPane.INFORMATION_MESSAGE);
 				}
 			}
 		}
