@@ -14,6 +14,7 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 	private JLabel lPhoto = new JLabel("Photo :");
 	private JLabel lContact = new JLabel("Téléphone :");
 	private JLabel lPassword = new JLabel("Password :");
+	private JLabel lDescription = new JLabel("Descritpion :");
 	
 	protected JTextField tNom = new JTextField();
 	protected JTextField tPrenom = new JTextField();
@@ -21,6 +22,7 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 	protected JTextField tPhoto = new JTextField();
 	protected JTextField tContact = new JTextField();
 	protected JPasswordField tPassword = new JPasswordField();
+	protected JTextField tDescription = new JTextField();
 	
 	private JButton bouton_annuler = new JButton("Annuler");
 	private JButton bouton_inscription = new JButton("Inscription");
@@ -74,6 +76,10 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 		container.add(lPassword);
 		container.add(tPassword);
 		
+		lPassword.setHorizontalAlignment(SwingConstants.CENTER);
+		container.add(lDescription);
+		container.add(tDescription);
+		
 		bouton_annuler.addActionListener(this);
 		bouton_annuler.setActionCommand("Annuler");
 		container.add(bouton_annuler);
@@ -91,9 +97,9 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 			tNom.setText(null);
 			tPrenom.setText(null);
 			tPhoto.setText(null);
-			lContact.setText(null);
+			tContact.setText(null);
 			tPseudo.setText(null);
-			lPassword.setText(null);
+			tPassword.setText(null);
 			this.dispose();
 		}
 		
@@ -102,6 +108,17 @@ public class PageInscriptionGUI extends JFrame implements ActionListener {
 			PageConnexionGUI pc = new PageConnexionGUI();
 			this.dispose();
 			jOpInscription.showMessageDialog(null, "Inscription réussi", "Welcome", JOptionPane.INFORMATION_MESSAGE);
+			if(tNom.getText().isEmpty() || tPrenom.getText().isEmpty() || tPseudo.getText().isEmpty() || tPassword.getText().isEmpty() || tContact.getText().isEmpty()){
+				jOpInscription.showMessageDialog(null, "L'un des champs suivant est vide: Nom, Prenom, Pseudo ou Password", "Erreur", JOptionPane.ERROR_MESSAGE);
+			}
+			else{
+				if(tDescription.getText().isEmpty() ^ tPhoto.getText().isEmpty()){
+					jOpInscription.showMessageDialog(null, "Vous devez soit remplir descritpion et photo soit laisser les deux champs vide", "Erreur", JOptionPane.ERROR_MESSAGE);
+				}
+				else if(tDescription.getText().isEmpty() && tPhoto.getText().isEmpty()){
+					Profil p = new Profil(tPrenom.getText(), tNom.getText(), tContact.getText(), tPseudo.getText(), tPassword.getText());
+				}
+			}
 		}
 	}
 	
