@@ -1,25 +1,30 @@
 import java.util.*;
 
 public class Profil extends Observable{
+
 	
-	private Utilisateur utilisateur;
-	
+	private String prenom;
+	private String nom;
+	private String contact;
 	private String pseudo;
 	private String password;
 	private String description;
 	private String photo;
 		
-	public Profil(Utilisateur utilisateur, String pseudo, String password) {
+	public Profil(String prenom, String nom, String contact, String pseudo, String password) {
 		super();
-		this.utilisateur = utilisateur;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.contact = contact;
 		this.pseudo = pseudo;
 		this.password = password;
 	}
 	
-	public Profil(Utilisateur utilisateur, String pseudo, String password,
-			String description, String photo) {
+	public Profil(String prenom, String nom, String contact, String pseudo, String password, String description, String photo) {
 		super();
-		this.utilisateur = utilisateur;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.contact = contact;
 		this.pseudo = pseudo;
 		this.password = password;
 		this.description = description;
@@ -27,14 +32,24 @@ public class Profil extends Observable{
 	}
 
 	
-	public Utilisateur getUtilisateur() {
-		return utilisateur;
+	public String getNom() {
+		return nom;
 	}
-
-	public void setUtilisateur(Utilisateur utilisateur) {
-		this.utilisateur = utilisateur;
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
-
+	public String getPrenom() {
+		return prenom;
+	}
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+	public String getContact() {
+		return contact;
+	}
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
 	public String getPseudo() {
 		return pseudo;
 	}
